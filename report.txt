@@ -1,0 +1,139 @@
+# KYC Improvement Project Documentation
+
+## Project Index
+### Overview
+The KYC Improvement Project aims to streamline the Know Your Customer (KYC) processes within the banking sector by transitioning to an automated system. This project will significantly enhance customer onboarding efficiency and compliance while minimizing operational costs.
+
+### Navigation
+- [Business Requirements Document (BRD)](#business-requirements-document-brd)
+- [Requirements / Use Cases](#requirements--use-cases)
+- [Diagrams](#diagrams)
+- [Validation Report](#validation-report)
+
+### Project Metadata
+- **Project Name:** Улучшение процесса KYC
+- **Start Date:** 2023-01-01
+- **End Date:** 2024-12-31
+- **Stakeholders:**
+  - Project Manager
+  - Compliance Officer
+  - IT Department
+  - Customer Service Team
+
+---
+
+## Business Requirements Document (BRD)
+### 1. Executive Summary
+This document outlines the business requirements for improving the Know Your Customer (KYC) processes. The primary objective is to automate and streamline the KYC framework, thereby reducing onboarding times and enhancing compliance.
+
+### 2. Goal and Background
+The objective of this initiative is to transition from a manual KYC process characterized by inefficiencies to a streamlined, digital-first approach that enhances compliance and customer satisfaction.
+
+### 3. Detailed Business Problem Description
+Current KYC processes are cumbersome, with issues such as long onboarding times, high operational costs, and compliance challenges.
+
+### 4. Business Objectives (SMART Format)
+- Specific: Automate the KYC process for digital submissions.
+- Measurable: Reduce customer onboarding time from 48 hours to 2 hours.
+- Achievable: Implement a phased rollout of automation tools.
+- Relevant: Aligns with regulatory compliance and operational efficiency goals.
+- Time-bound: Complete the transition by the end of Q4 2024.
+
+### 5. Functional Requirements
+1. The system shall allow customers to submit identification documents through a secure online portal.
+2. The system shall automatically verify submitted documents against government databases.
+3. The system shall conduct real-time background checks against watchlists.
+
+### 6. Non-Functional Requirements
+- Performance: The system should support at least 500 simultaneous user sessions.
+- Security: Compliance with ISO/IEC 27001 for information security.
+
+### 7. Business Rules
+1. Customers must be verified within regulatory timeframes.
+2. All customer data must be encrypted during transmission and at rest.
+
+### 10. KPIs and Success Metrics
+- Processing Time: Reduction to 2 hours per KYC process.
+- Compliance Rate: Achieve a compliance adherence rate of 100%.
+
+---
+
+## Requirements / Use Cases
+### Use Case 1: Document Submission
+- **Use Case ID**: UC-001
+- **Actors**: Customer, System Administrator
+- **Preconditions**: Customer must be logged in.
+- **Main Flow**:
+  - Customer uploads identification documents.
+  - System validates and confirms receipt.
+- **Postconditions**: Submitted documents are stored for verification.
+
+### Use Case 2: Document Verification
+- **Use Case ID**: UC-002
+- **Actors**: System, Compliance Officer
+- **Preconditions**: Documents must have been submitted.
+- **Main Flow**:
+  - System verifies documents against government databases.
+  - Compliance officer reviews the verification report.
+
+### Additional Use Cases Matched to User Stories
+Each functional requirement corresponds to specific use cases and user stories, detailing actions, potential errors, and rules.
+
+---
+
+## Diagrams
+Conceptual diagrams have been created to visualize the current and future KYC processes.
+
+### AS-IS BPMN Process:
+```mermaid
+graph TD
+    A[Customer Login] --> B[Document Upload]
+    B --> C{Document Format Valid?}
+    C -- Yes --> D[Preliminary Checks]
+    C -- No --> E[Error Message]
+    D --> F[Document Queue]
+    F --> G[Document Verification]
+    G --> H{Verification Successful?}
+    H -- Yes --> I[Background Check]
+    H -- No --> J[Generate Discrepancy Alert]
+    I --> K[Store Customer Data]
+    J --> L[Compliance Officer Review]
+    K --> M[End Process]
+    L --> M
+```
+
+### TO-BE BPMN Process:
+```mermaid
+graph TD
+    A[Customer Login] --> B[Document Upload]
+    B --> C{Document Format Valid?}
+    C -- Yes --> D[Automated Preliminary Checks]
+    C -- No --> E[Error Message]
+    D --> F[Document Queue]
+    F --> G[Automated Document Verification]
+    G --> H{Verification Successful?}
+    H -- Yes --> I[Automated Background Check]
+    H -- No --> J[Generate Discrepancy Alert]
+    I --> K[Store Customer Data in Unified Database]
+    J --> L[Compliance Officer Review]
+    K --> M[Real-time Status Dashboard]
+    L --> M
+```
+
+---
+
+## Validation Report
+### Executive Summary
+This report evaluates the quality and completeness of the KYC improvement documentation. The review identifies potential gaps, issues with clarity, and compliance readiness.
+
+### Issues Found
+- **Critical Issues**: Missing acceptance criteria for functional requirements.
+- **Unclear Definitions**: Key terms such as "automated" lack clear definitions.
+- **Traceability Gaps**: Some user stories lack traceable links to requirements.
+
+### Recommended Fixes
+1. Ensure all functional requirements include specific acceptance criteria.
+2. Clarify key terms throughout documentation.
+3. Update BPMN diagrams for completeness.
+
+This comprehensive documentation serves as a guide for the successful implementation of the KYC improvement project, ensuring that stakeholders have clear insights and pathways to follow.
