@@ -11,7 +11,7 @@ AIAgent
 * **Env:** Python 3.10+
 
 Быстрый старт
-```bash
+bash
 git clone git@github.com:AliDamn/AIAgent.git
 cd AIAgent
 python -m venv .venv && source .venv/bin/activate
@@ -21,13 +21,13 @@ pip install -r requirements.txt
 
 Создайте `.env`:
 
-```env
+env
 OPENAI_API_KEY=sk-...
 # Дополнительно для CrewAI (опционально)
 SERPER_API_KEY=your_serper_key 
 
 Запуск
 
-```bash
+bash
 python main.py
 
